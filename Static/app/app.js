@@ -1,4 +1,5 @@
 angular.module("app",[
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'ui.grid'
 ]);
