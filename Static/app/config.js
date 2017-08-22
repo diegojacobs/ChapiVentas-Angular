@@ -1,4 +1,4 @@
-(function (){
+(function() {
     "use strict";
 
     angular
@@ -7,15 +7,15 @@
 
     config.$inject = [
         '$stateProvider',
-        '$locationProvider', 
+        '$locationProvider',
         '$urlRouterProvider'
     ];
 
-    function config($stateProvider, $locationProvider, $urlRouterProvider){
+    function config($stateProvider, $locationProvider, $urlRouterProvider) {
         var home = {
             name: 'home',
             url: '/',
-            template: '/Static/Views/home.html',
+            templateUrl: '/Static/Views/home.html',
             controller: 'homeController',
             controllerAs: 'vmHome'
         };
@@ -23,7 +23,7 @@
         var report = {
             name: 'report',
             url: '/report',
-            template: '/Static/Views/report.html',
+            templateUrl: '/Static/Views/report.html',
             controller: 'reportsController',
             controllerAs: 'vmReport'
         };
@@ -32,6 +32,6 @@
         $stateProvider.state(report);
 
         $urlRouterProvider.otherwise('/');
-        $locationProvider.html5mode(true);
+        $locationProvider.html5Mode(true);
     }
 })();
