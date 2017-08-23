@@ -27,6 +27,16 @@
             controller: 'reportsController',
             controllerAs: 'vmReport'
         };
+        
+        var calendar = {
+            name: 'calendar',
+            url: '/calendar',
+            templateUrl: '/Static/Views/calendar.html',
+            controller: 'calendarController',
+            controllerAs: 'calendarCtrl'
+        };
+
+        $stateProvider.state(calendar);
 
         $stateProvider.state(home);
         $stateProvider.state(report);

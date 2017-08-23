@@ -13,7 +13,11 @@
 
         'ui.router',
         'ui.bootstrap',
-        'nvd3'
+        'nvd3',
+
+        'mwl.calendar',
+        'ngAnimate',
+        'colorpicker.module'
     ]);
 
 })();
