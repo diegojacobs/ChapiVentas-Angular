@@ -28,10 +28,19 @@
             controllerAs: 'vmReport'
         };
 
+        var signin = {
+            name: 'signin',
+            url: '/SignIn',
+            templateUrl: '/Static/Views/login.html',
+            controller: 'loginController',
+            controllerAs: 'vmLogin'
+        };
+
         $stateProvider.state(home);
         $stateProvider.state(report);
+        $stateProvider.state(signin);
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/SignIn');
         // $locationProvider.html5Mode(true);
     }
 })();
