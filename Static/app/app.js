@@ -1,5 +1,11 @@
-angular.module("app",[
+angular.module("app", [
+    'ngTouch',
     'ngSanitize',
-    'ui.router',
-    'ui.grid'
+
+    //UI Grid
+    'ui.grid',
+    'ui.grid.pagination',
+    'ui.grid.autoResize',
+
+    'ui.router'
 ]);
