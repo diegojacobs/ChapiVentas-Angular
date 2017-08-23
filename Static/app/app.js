@@ -12,7 +12,8 @@
         'ui.grid.exporter',
 
         'ui.router',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'nvd3'
     ]);
 
 })();
