@@ -7,23 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chapi Ventas</title>
     <link rel="shortcut icon" type="image/png" href="/Static/assets/favicon.png" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="/Static/app/Vendor/Angular/angular.min.js"></script>
     <script src="/Static/app/Vendor/Angular/angular-sanitize.min.js"></script>
     <script src="/Static/app/Vendor/Angular/angular-animate.min.js"></script>
     <script src="/Static/app/Vendor/Angular/angular-touch.min.js"></script>
-    <script src="/Static/app/Vendor/Bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="/Static/app/Vendor/ui-router/angular-ui-router.min.js"></script>
     <script src="/Static/app/Vendor/ui-grid/ui-grid.min.js"></script>
+    <script src="/Static/app/Vendor/Bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.min.js" integrity="sha256-qm2y6GpAuDPyqDIuSpOn/pIc+pPbNz1g+Yaoidil0f8=" crossorigin="anonymous"></script>
+    <script src="//ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="//ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="//ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.css" integrity="sha256-EyPWb5mN6p1A1lFzws0wvrwtl1LKM3dKD5xNfquhY5c=" crossorigin="anonymous" />
     <link type="stylesheet" href="/Static/CSS/styles.css" />
 
     <!-- <base href="/"> -->
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-cloak>
+    <nav-bar></nav-bar>
+
     <ui-view></ui-view>
+
 
     <!-- Module -->
     <script src="/Static/app/app.js"></script>
@@ -34,7 +43,7 @@
     <script src="/Static/app/Controllers/reportController.js"></script>
 
     <!-- Directives -->
-
+    <script src="/Static/app/Directives/navBar.js"></script>
     <!-- Services -->
 
     <!-- Factories -->
