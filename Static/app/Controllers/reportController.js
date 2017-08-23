@@ -7,19 +7,19 @@
 
     reportsController.$inject = [
         "$scope",
-        "$rootScope"
+        "$rootScope",
+        'uiGridConstants'
     ];
 
-    function reportsController($scope, $rootScope) {
+    function reportsController($scope, $rootScope, uiGridConstants) {
         var vm = this;
 
         vm.$onInit = onInit;
 
         function onInit() {
             //Models
-            vm.export_column_type = undefined;
-            vm.export_row_type = undefined;
-            vm.export_format = undefined;
+            vm.export_column_type = "all";
+            vm.export_row_type = "all";
             vm.gridData = [{
                     'Id': 0,
                     'fecha': '2017 / 8 / 21',
@@ -66,7 +66,9 @@
 
             //Functions
             vm.toggleFiltering = toggleFiltering;
-            vm.export = exportGrid;
+            vm.exportPdf = exportGridPdf;
+            vm.exportCsv = exportGridCsv;
+            vm.loadDataToGrid = loadDataToGrid;
         }
 
         function onRegisterApi(gridApi) {
@@ -99,14 +101,17 @@
             vm.gridApi.core.notifyDataChange(uiGridConstants.dataChange.COLUMN);
         }
 
+        function loadDataToGrid() {
+            vm.gridOptions.data = vm.gridData;
+        }
 
-        function exportGrid() {
-            if (vm.export_format == 'csv') {
-                var myElement = angular.element(document.querySelectorAll(".custom-csv-link-location"));
-                vm.gridApi.exporter.csvExport(vm.export_row_type, vm.export_column_type, myElement);
-            } else if (vm.export_format == 'pdf') {
-                vm.gridApi.exporter.pdfExport(vm.export_row_type, vm.export_column_type);
-            }
-        };
+        function exportGridPdf() {
+            vm.gridApi.exporter.pdfExport(vm.export_row_type, vm.export_column_type);
+        }
+
+        function exportGridCsv() {
+            var myElement = angular.element(document.querySelectorAll(".custom-csv-link-location"));
+            vm.gridApi.exporter.csvExport(vm.export_row_type, vm.export_column_type, myElement);
+        }
     }
 })();
