@@ -51,6 +51,10 @@
               <select class="form-control" id="products" ng-model="event.promotion.product">
                   <option ng-repeat="x in calendarCtrl.products">{{x}}</option>
               </select>
+              <label for="course">Select The Course:</label>
+              <select class="form-control" id="course" ng-model="event.promotion.course">
+                  <option ng-repeat="x in calendarCtrl.courses">{{x.key}}</option>
+              </select>
             </div>
           </td>
           <td>

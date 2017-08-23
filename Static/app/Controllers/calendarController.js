@@ -9,10 +9,11 @@
                                 'calendarConfig',
                                 'productsRepository',
                                 'importantDatesRepository',
+                                'coursesRepository',
                                 "$scope", 
                                 "$rootScope"
                                 ];
-    function calendarController( calendarConfig, productsRepository, importantDatesRepository, $scope, $rootScope) {
+    function calendarController( calendarConfig, productsRepository, importantDatesRepository, coursesRepository, $scope, $rootScope) {
         var vm = this;
            vm.calendarView = 'month';
         vm.viewDate = new Date();
@@ -28,38 +29,39 @@
                 }
             }];
         vm.events = [
-            {
-                title: 'An event',
-                color: calendarConfig.colorTypes.warning,
-                startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-                endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-                draggable: true,
-                resizable: true,
-                actions: actions,
-                editable: true
-            }, {
-                title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
-                color: calendarConfig.colorTypes.info,
-                startsAt: moment().subtract(1, 'day').toDate(),
-                endsAt: moment().add(5, 'days').toDate(),
-                draggable: true,
-                resizable: true,
-                actions: actions,
-                editable: true
-            }, {
-                title: 'This is a really long event title that occurs on every year',
-                color: calendarConfig.colorTypes.important,
-                startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-                endsAt: moment().startOf('day').add(19, 'hours').toDate(),
-                recursOn: 'year',
-                draggable: true,
-                resizable: true,
-                actions: actions,
-                editable: true
-            }
+            // {
+            //     title: 'An event',
+            //     color: calendarConfig.colorTypes.warning,
+            //     startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
+            //     endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
+            //     draggable: true,
+            //     resizable: true,
+            //     actions: actions,
+            //     editable: true
+            // }, {
+            //     title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
+            //     color: calendarConfig.colorTypes.info,
+            //     startsAt: moment().subtract(1, 'day').toDate(),
+            //     endsAt: moment().add(5, 'days').toDate(),
+            //     draggable: true,
+            //     resizable: true,
+            //     actions: actions,
+            //     editable: true
+            // }, {
+            //     title: 'This is a really long event title that occurs on every year',
+            //     color: calendarConfig.colorTypes.important,
+            //     startsAt: moment().startOf('day').add(7, 'hours').toDate(),
+            //     endsAt: moment().startOf('day').add(19, 'hours').toDate(),
+            //     recursOn: 'year',
+            //     draggable: true,
+            //     resizable: true,
+            //     actions: actions,
+            //     editable: true
+            // }
         ];
 
         vm.products = productsRepository.obtainAvailableProducts();
+        vm.courses = coursesRepository.obtainAvailableCourses();
 
         importantDatesRepository.obtainImportantDates().forEach(function(element) {
             vm.events.push({
@@ -88,7 +90,8 @@
                     secondary: "#f0f5f0"
                 },
                 draggable: true,
-                resizable: true
+                resizable: true,
+                editable: true
             });
         };
 
