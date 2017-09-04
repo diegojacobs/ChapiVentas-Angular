@@ -5,18 +5,18 @@
         .module('app')
         .controller('loginController', loginController);
 
-    loginController.$inject = [];
+    loginController.$inject = [
+        '$scope',
+        '$rootScope'
+    ];
 
-    function loginController() {
+    function loginController($scope, $rootScope) {
         var vm = this;
 
         vm.$onInit = onInit;
 
         function onInit() {
-            vm.signIn = {
-                Username: '',
-                Password: ''
-            };
+
         }
     }
 

@@ -15,7 +15,7 @@
         var home = {
             name: 'home',
             url: '/',
-            templateUrl: '/Static/Views/home.html',
+            templateUrl: '/Views/home.html',
             controller: 'homeController',
             controllerAs: 'vmHome'
         };
@@ -23,7 +23,7 @@
         var report = {
             name: 'report',
             url: '/report',
-            templateUrl: '/Static/Views/report.html',
+            templateUrl: '/Views/report.html',
             controller: 'reportsController',
             controllerAs: 'vmReport'
         };
@@ -31,7 +31,7 @@
         var signin = {
             name: 'signin',
             url: '/SignIn',
-            templateUrl: '/Static/Views/login.html',
+            templateUrl: '/Views/login.html',
             controller: 'loginController',
             controllerAs: 'vmLogin'
         };
