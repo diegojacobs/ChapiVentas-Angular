@@ -9,7 +9,7 @@
     angular
         .module('app')
         .component('navBar', {
-            templateUrl: '/Static/Views/nav-bar.html',
+            templateUrl: '/Views/nav-bar.html',
             controller: navBarController,
             controllerAs: 'vmNavBar',
             bindings: {

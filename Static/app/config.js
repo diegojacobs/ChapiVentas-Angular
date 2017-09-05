@@ -27,11 +27,11 @@
             controller: 'reportsController',
             controllerAs: 'vmReport'
         };
-        
+
         var calendar = {
             name: 'calendar',
             url: '/calendar',
-            templateUrl: '/Static/Views/calendar.html',
+            templateUrl: '/Views/calendar.html',
             controller: 'calendarController',
             controllerAs: 'calendarCtrl'
         };

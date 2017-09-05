@@ -5,19 +5,15 @@
         .module('app')
         .controller('loginController', loginController);
 
-    loginController.$inject = [
-        '$scope',
-        '$rootScope'
-    ];
+    loginController.$inject = ['$scope'];
 
-    function loginController($scope, $rootScope) {
+    function loginController($scope) {
         var vm = this;
 
         vm.$onInit = onInit;
 
-        function onInit() {
+        ////////////////
 
-        }
+        function onInit() {}
     }
-
 })();
