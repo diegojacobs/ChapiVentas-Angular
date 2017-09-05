@@ -15,7 +15,7 @@
         var home = {
             name: 'home',
             url: '/',
-            templateUrl: '/Static/Views/home.html',
+            templateUrl: '/Views/home.html',
             controller: 'homeController',
             controllerAs: 'vmHome'
         };
@@ -23,7 +23,7 @@
         var report = {
             name: 'report',
             url: '/report',
-            templateUrl: '/Static/Views/report.html',
+            templateUrl: '/Views/report.html',
             controller: 'reportsController',
             controllerAs: 'vmReport'
         };
@@ -38,10 +38,19 @@
 
         $stateProvider.state(calendar);
 
+        var signin = {
+            name: 'signin',
+            url: '/SignIn',
+            templateUrl: '/Views/login.html',
+            controller: 'loginController',
+            controllerAs: 'vmLogin'
+        };
+
         $stateProvider.state(home);
         $stateProvider.state(report);
+        $stateProvider.state(signin);
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/SignIn');
         // $locationProvider.html5Mode(true);
     }
 })();
