@@ -43,22 +43,18 @@
 
 		return service;
 		function obtainAvailableCourses(){
-            return service.defaultCourses;
-			// return $http(
-			// {
-			// 	method: 'POST',
-			// 	url: '',
-			// 	data: info,
-			// 	params: {
-
-			// 	},
-			// 	headers: {
-
-			// 	}
-			// }
-			// )
-			// .then(success)
-			// .catch(error);
+            //return service.defaultCourses;
+			return $http(
+			{
+				method: 'GET',
+				url: "http://13.58.81.154/api/carrera",
+				headers: {
+                    "accept": "application/json"
+				}
+			}
+			)
+			.then(success)
+			.catch(error);
 		}
 		function success(response) {
 			return response.data;
