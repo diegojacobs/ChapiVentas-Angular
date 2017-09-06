@@ -47,19 +47,24 @@
             ];
 
             vm.gridOptions = {
+                rowHeight: 44,
+                enableColumnMenus: false,
                 paginationPageSizes: [10, 25, 50],
                 paginationPageSize: 10,
-                enableColumnResizing: true,
+                paginationCurrentPage: 1,
+                enableHorizontalScrollbar: 1,
                 enableFiltering: false,
                 columnDefs: columnDefs,
+                onRegisterApi: onRegisterApi,
+
+                //Export
                 exporterLinkLabel: 'get your csv here',
                 exporterPdfDefaultStyle: { fontSize: 9 },
                 exporterPdfTableStyle: { margin: [30, 30, 30, 30] },
                 exporterPdfTableHeaderStyle: { fontSize: 10, bold: true, italics: true, color: 'red' },
                 exporterPdfOrientation: 'portrait',
                 exporterPdfPageSize: 'LETTER',
-                exporterPdfMaxGridWidth: 500,
-                onRegisterApi: onRegisterApi
+                exporterPdfMaxGridWidth: 500
             };
 
             vm.gridOptions.data = vm.gridData;
@@ -85,12 +90,15 @@
                     field: 'Product'
                 },
                 {
+                    name: 'Quantity',
                     field: 'Quantity'
                 },
                 {
+                    name: 'Promotion',
                     field: 'Promotion'
                 },
                 {
+                    name: 'Amount',
                     field: 'Sell Amount'
                 }
             ];
