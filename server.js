@@ -13,5 +13,4 @@ app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use(morgan('dev')); // log every request to the console
 
 // listen (start app with node server.js) ======================================
-app.listen(8080);
-console.log("App listening on port 8080");
+app.listen(8000);

@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  chapi:
+    build: .
+    command: npm start
+    volumes: 
+      - ./:/home/chapi-ventas-ui/
+    ports: 
+      - "2017:8000"
