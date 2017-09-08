@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .factory('ReportsRepository', reportsRepository);
+        .factory('ReportRepository', reportRepository);
 
-    reportsRepository.$inject = ['$http', '$q'];
+    reportRepository.$inject = ['$http', '$q'];
 
-    function reportsRepository($http, $q) {
+    function reportRepository($http, $q) {
         var routes = {
 
         };
@@ -22,12 +22,12 @@
         function getReportData() {
             return $http({
                 method: "GET",
-                url: ""
+                url: "http://13.58.81.154/api/carrera"
             }).then(function (response) {
                 //return response.data;
                 return [{
                         'Id': 0,
-                        'fecha': '2017 / 8 / 21',
+                        'fecha': '2017/8/21',
                         'producto': 'Doritos Verdes',
                         'cantidad': 10,
                         'promocion': '2x1',
@@ -35,7 +35,7 @@
                     },
                     {
                         'Id': 1,
-                        'fecha': '2017 / 8 / 21',
+                        'fecha': '2017/8/21',
                         'producto': 'Doritos Rojos',
                         'cantidad': 50,
                         'promocion': '2x1',
@@ -43,7 +43,7 @@
                     },
                     {
                         'Id': 2,
-                        'fecha': '2017 / 8 / 21',
+                        'fecha': '2017/8/21',
                         'producto': 'Doritos Azules',
                         'cantidad': 20,
                         'promocion': '2x1',
@@ -52,6 +52,31 @@
                 ];
             }).catch(function (response) {
                 //return $q.reject(response.data);
+                return [{
+                    'Id': 0,
+                    'fecha': '2017/8/21',
+                    'producto': 'Doritos Verdes',
+                    'cantidad': 10,
+                    'promocion': '2x1',
+                    'totalVenta': 50.00
+                },
+                {
+                    'Id': 1,
+                    'fecha': '2017/8/21',
+                    'producto': 'Doritos Rojos',
+                    'cantidad': 50,
+                    'promocion': '2x1',
+                    'totalVenta': 250.00
+                },
+                {
+                    'Id': 2,
+                    'fecha': '2017 / 8 / 21',
+                    'producto': 'Doritos Azules',
+                    'cantidad': 20,
+                    'promocion': '2x1',
+                    'totalVenta': 100.00
+                }
+            ];
             });
         }
     }
