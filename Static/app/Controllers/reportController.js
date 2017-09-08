@@ -8,10 +8,11 @@
     reportsController.$inject = [
         "$scope",
         "$rootScope",
-        'uiGridConstants'
+        'uiGridConstants',
+        "ReportRepository"
     ];
 
-    function reportsController($scope, $rootScope, uiGridConstants) {
+    function reportsController($scope, $rootScope, uiGridConstants, reportRepository) {
         var vm = this;
 
         vm.$onInit = onInit;
@@ -20,31 +21,18 @@
             //Models
             vm.export_column_type = "all";
             vm.export_row_type = "all";
-            vm.gridData = [{
-                    'Id': 0,
-                    'fecha': '2017 / 8 / 21',
-                    'producto': 'Doritos Verdes',
-                    'cantidad': 10,
-                    'promocion': '2x1',
-                    'totalVenta': 50.00
-                },
-                {
-                    'Id': 1,
-                    'fecha': '2017 / 8 / 21',
-                    'producto': 'Doritos Rojos',
-                    'cantidad': 50,
-                    'promocion': '2x1',
-                    'totalVenta': 250.00
-                },
-                {
-                    'Id': 2,
-                    'fecha': '2017 / 8 / 21',
-                    'producto': 'Doritos Azules',
-                    'cantidad': 20,
-                    'promocion': '2x1',
-                    'totalVenta': 100.00
-                }
-            ];
+
+            reportRepository.getReportData()
+                .then(function (response){
+                    vm.gridOptions.data = response;
+                })
+                .catch(function (response){
+
+                })
+                .finally(function (response){
+
+                });
+            
 
             vm.gridOptions = {
                 rowHeight: 44,
@@ -54,20 +42,18 @@
                 paginationCurrentPage: 1,
                 enableHorizontalScrollbar: 1,
                 enableFiltering: false,
-                columnDefs: columnDefs,
+                columnDefs: columnDefs(),
                 onRegisterApi: onRegisterApi,
 
                 //Export
                 exporterLinkLabel: 'get your csv here',
                 exporterPdfDefaultStyle: { fontSize: 9 },
                 exporterPdfTableStyle: { margin: [30, 30, 30, 30] },
-                exporterPdfTableHeaderStyle: { fontSize: 10, bold: true, italics: true, color: 'red' },
+                exporterPdfTableHeaderStyle: { fontSize: 10, bold: true, italics: false, color: 'black' },
                 exporterPdfOrientation: 'portrait',
                 exporterPdfPageSize: 'LETTER',
                 exporterPdfMaxGridWidth: 500
             };
-
-            vm.gridOptions.data = vm.gridData;
 
             //Functions
             vm.toggleFiltering = toggleFiltering;
@@ -81,25 +67,27 @@
         }
 
         function columnDefs() {
-            return [{
+            return [
+                {
                     name: 'Date',
                     field: 'fecha'
                 },
                 {
                     name: 'Product',
-                    field: 'Product'
+                    field: 'producto'
                 },
                 {
                     name: 'Quantity',
-                    field: 'Quantity'
+                    field: 'cantidad'
                 },
                 {
                     name: 'Promotion',
-                    field: 'Promotion'
+                    field: 'promocion'
                 },
                 {
-                    name: 'Amount',
-                    field: 'Sell Amount'
+                    name: 'Sell Amount',
+                    field: 'totalVenta',
+                    cellTemplate: '<div class="ui-grid-cell-contents">{{  }}</div>'
                 }
             ];
         }
