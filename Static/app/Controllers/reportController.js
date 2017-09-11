@@ -69,25 +69,28 @@
         function columnDefs() {
             return [
                 {
-                    name: 'Date',
-                    field: 'fecha'
+                    name: 'Fecha',
+                    field: 'fecha',
+                    cellTemplate: '<div class="ui-grid-cell-contents">{{ row.entity.fecha.fechaEvento | date:"dd/MM/yyyy" }}</div>'
                 },
                 {
-                    name: 'Product',
-                    field: 'producto'
+                    name: 'Producto',
+                    field: 'producto',
+                    cellTemplate: '<div class="ui-grid-cell-contents">{{ row.entity.producto.nombreProducto.nombre }}</div>'
                 },
                 {
-                    name: 'Quantity',
+                    name: 'Cantidad',
                     field: 'cantidad'
                 },
                 {
-                    name: 'Promotion',
-                    field: 'promocion'
+                    name: 'Precio Producto',
+                    field: 'valorMonetario',
+                    cellTemplate: '<div class="ui-grid-cell-contents">{{ row.entity.producto.valorMonetario.moneda }}{{ row.entity.producto.valorMonetario.precio }}</div>'
                 },
                 {
-                    name: 'Sell Amount',
+                    name: 'Total Venta',
                     field: 'totalVenta',
-                    cellTemplate: '<div class="ui-grid-cell-contents">{{  }}</div>'
+                    cellTemplate: '<div class="ui-grid-cell-contents">{{ row.entity.totalVenta.moneda }}{{ row.entity.totalVenta.precio }}</div>'
                 }
             ];
         }

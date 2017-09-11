@@ -5,9 +5,9 @@
         .module('app')
         .controller('loginController', loginController);
 
-    loginController.$inject = ['$scope'];
+    loginController.$inject = ['$scope', '$state'];
 
-    function loginController($scope) {
+    function loginController($scope, $state) {
         var vm = this;
 
         vm.$onInit = onInit;
