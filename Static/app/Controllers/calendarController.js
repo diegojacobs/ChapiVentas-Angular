@@ -8,13 +8,12 @@
     calendarController.$inject = [
                                 'calendarConfig',
                                 'productsRepository',
-                                'importantDatesRepository',
                                 'coursesRepository',
                                 "$scope", 
                                 "$rootScope",
                                 '$window'
                                 ];
-    function calendarController( calendarConfig, productsRepository, importantDatesRepository, coursesRepository, $scope, $rootScope, $window) {
+    function calendarController(calendarConfig, productsRepository, coursesRepository, $scope, $rootScope, $window) {
         var vm = this;
         vm.calendarView = 'month';
         vm.viewDate = new Date();
@@ -24,24 +23,37 @@
         vm.addEvent = addEvent;
         vm.toggle = toggle;
         vm.saveEvent = saveEvent;
+        vm.deleteEvent = deleteEvent;
         vm.products = productsRepository.obtainAvailableProducts();
         coursesRepository
           .obtainAvailableCourses()
           .then(success)
           .catch(error);
-        importantDatesRepository
+        coursesRepository
             .obtainPromos()
             .then(promosSuccess)
             .catch(error);
-        importantDatesRepository
+        coursesRepository
             .obtainImportantDates()
             .then(datesSuccess)
             .catch(error);
         function saveEvent(){
-            importantDatesRepository
+            $window.alert("Successfully Saved!");
+            coursesRepository
                 .saveEvent(vm.activeEvent)
                 .then(successGeneral)
                 .catch(error);
+        }
+        function deleteEvent(){
+            coursesRepository
+                .deleteEvent(vm.activeEvent)
+                .then(successDelete)
+                .catch(error);
+        }
+        function successDelete(data){
+            vm.events.splice(vm.events.indexOf(vm.activeEvent), 1);
+            vm.activeEvent = undefined;
+
         }
         function successGeneral(data){
             console.log(data);
@@ -55,9 +67,11 @@
         function datesSuccess(data){
             data.forEach(function(element) {
               vm.events.push({
-                title: element.tipoPromocion,
-                startsAt: new Date(element.fechaInicioPromo),
-                endsAt: new Date(element.fechaFinalPromo),
+                id: element._id,
+                title: element.titulo,
+                startsAt: new Date(element.fechaEvento),
+                endsAt: new Date(element.fechaEvento),
+                description: element.descripcion,
                 color: {
                   primary: "#ebdb23",
                   secondary: "#ebdb23"
@@ -72,13 +86,13 @@
             data.forEach(function(element) {
               vm.events.push({
                 id: element._id,
-                title: element.tipoPromocion,
+                title: element.tipoPromocion.tipo,
                 startsAt: new Date(element.fechaInicioPromo),
                 endsAt: new Date(element.fechaFinalPromo),
-                description: element.descripcionPromocion,
+                description: element.descripcionPromocion.descripcion,
                 percentage: element.descuento,
                 color: {
-                  primary: "#ebdb23",
+                  primary: element.color,
                   secondary: "#ebdb23"
                 },
                 draggable: true,
@@ -105,8 +119,10 @@
             $window.scrollTo(0, angular.element('table')[0].offsetTop);
         };
         function eventClicked(event) {
-            vm.activeEvent = event;
-            $window.scrollTo(0, angular.element('table')[0].offsetTop);
+            if(event.editable == true){
+                vm.activeEvent = event;
+                $window.scrollTo(0, angular.element('table')[0].offsetTop);
+            }
         };
         function toggle($event, field, event) {
             $event.preventDefault();

@@ -3,11 +3,11 @@
 
 	angular
 	.module('app')
-	.factory('importantDatesRepository', importantDatesRepository);
+	.factory('datesRepository	', datesRepository);
 
-	importantDatesRepository.$inject = ['$http'];
+	datesRepository.$inject = ['$http'];
 
-	function importantDatesRepository($http){
+	function datesRepository($http){
 		var service = {
 			obtainImportantDates: obtainImportantDates,
 			obtainPromos: obtainPromos,
@@ -43,7 +43,7 @@
       //return service.defaultDates;
 			return $http({
 				method: "GET",
-				url: "http://13.58.81.154/api/promocion",
+				url: "http://13.58.81.154/api/promocion/query",
 				params: {
 					fechaInicio: startDate,
 					fechaFinal: endDate
