@@ -25,7 +25,7 @@
             name: 'report',
             url: '/report',
             templateUrl: '/Views/report.html',
-            controller: 'reportsController',
+            controller: 'ReportsController',
             controllerAs: 'vmReport'
         };
 

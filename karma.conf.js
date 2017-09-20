@@ -16,11 +16,20 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       './node_modules/angular/angular.js',                             // angular
-      './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
       './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
-      './Static/app/app.spec.js',                                 
-      './Static/app/Repositories/reportsRepository.js',
-      './Static/app/Repositories/reportsRepository.spec.js'
+      //module
+      './Static/Tests/app.spec.js', 
+
+      //mocks 
+      './Static/Tests/Libraries Mocks/uiGridConstants.mock.js',
+
+      //Repositories
+      './Static/Tests/Repositories/reportsRepository.mock.js',
+      './Static/Tests/Repositories/reportsRepository.spec.js',
+
+      //Controllers
+      './Static/app/Controllers/reportController.js',
+      './Static/Tests/Controllers/reportController.spec.js'
     ],
 
 
@@ -38,7 +47,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
@@ -70,5 +79,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};

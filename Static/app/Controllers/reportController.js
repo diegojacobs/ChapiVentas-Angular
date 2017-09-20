@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('reportsController', reportsController);
+        .controller('ReportsController', reportsController);
 
     reportsController.$inject = [
         "$scope",
