@@ -8,10 +8,6 @@
     reportRepository.$inject = ['$http', '$q'];
 
     function reportRepository($http, $q) {
-        var routes = {
-
-        };
-
         var service = {
             getReportData: getReportData
         };
