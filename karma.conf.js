@@ -18,23 +18,23 @@ module.exports = function(config) {
       './node_modules/angular/angular.js',                             // angular
       './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
       //module
-      './Static/Tests/app.spec.js', 
+      './Static/Tests/Unit/app.spec.js', 
 
       //mocks 
-      './Static/Tests/Libraries Mocks/uiGridConstants.mock.js',
-      './Static/Tests/Libraries Mocks/state.mock.js',
+      './Static/Tests/Unit/Libraries Mocks/uiGridConstants.mock.js',
+      './Static/Tests/Unit/Libraries Mocks/state.mock.js',
 
       //Repositories
-      './Static/Tests/Repositories/reportsRepository.mock.js',
-      './Static/Tests/Repositories/reportsRepository.spec.js',
+      './Static/Tests/Unit/Repositories/reportsRepository.mock.js',
+      './Static/Tests/Unit/Repositories/reportsRepository.spec.js',
 
       //Controllers
       './Static/app/Controllers/reportController.js',
-      './Static/Tests/Controllers/reportController.spec.js',
+      './Static/Tests/Unit/Controllers/reportController.spec.js',
       './Static/app/Controllers/homeController.js',
-      './Static/Tests/Controllers/homeController.spec.js',
+      './Static/Tests/Unit/Controllers/homeController.spec.js',
       './Static/app/Controllers/loginController.js',
-      './Static/Tests/Controllers/loginController.spec.js'
+      './Static/Tests/Unit/Controllers/loginController.spec.js'
     ],
 
 
