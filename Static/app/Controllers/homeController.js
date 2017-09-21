@@ -3,13 +3,14 @@
 
     angular
         .module('app')
-        .controller('homeController', homeController);
+        .controller('HomeController', homeController);
 
     homeController.$inject = [
-        '$scope'
+        '$scope',
+        '$rootScope'
     ];
 
-    function homeController($scope) {
+    function homeController($scope, $rootScope) {
         var vm = this;
 
         vm.$onInit = onInit;

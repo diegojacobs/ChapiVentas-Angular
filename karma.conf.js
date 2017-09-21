@@ -22,6 +22,7 @@ module.exports = function(config) {
 
       //mocks 
       './Static/Tests/Libraries Mocks/uiGridConstants.mock.js',
+      './Static/Tests/Libraries Mocks/state.mock.js',
 
       //Repositories
       './Static/Tests/Repositories/reportsRepository.mock.js',
@@ -29,7 +30,11 @@ module.exports = function(config) {
 
       //Controllers
       './Static/app/Controllers/reportController.js',
-      './Static/Tests/Controllers/reportController.spec.js'
+      './Static/Tests/Controllers/reportController.spec.js',
+      './Static/app/Controllers/homeController.js',
+      './Static/Tests/Controllers/homeController.spec.js',
+      './Static/app/Controllers/loginController.js',
+      './Static/Tests/Controllers/loginController.spec.js'
     ],
 
 

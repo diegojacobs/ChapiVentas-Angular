@@ -3,11 +3,15 @@
 
     angular
         .module('app')
-        .controller('loginController', loginController);
+        .controller('LoginController', loginController);
 
-    loginController.$inject = ['$scope', '$state'];
+    loginController.$inject = [
+        '$scope', 
+        '$rootScope', 
+        '$state'
+    ];
 
-    function loginController($scope, $state) {
+    function loginController($scope, $rootScope, $state) {
         var vm = this;
 
         vm.$onInit = onInit;
@@ -25,7 +29,7 @@
 
         function validateLogin(){
             if(vm.username && vm.password){
-                $state.go("home");
+                $state.go('home');
             }
         }
     }

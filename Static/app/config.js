@@ -17,7 +17,7 @@
             name: 'home',
             url: '/',
             templateUrl: '/Views/home.html',
-            controller: 'homeController',
+            controller: 'HomeController',
             controllerAs: 'vmHome'
         };
 
@@ -43,7 +43,7 @@
             name: 'signin',
             url: '/SignIn',
             templateUrl: '/Views/login.html',
-            controller: 'loginController',
+            controller: 'LoginController',
             controllerAs: 'vmLogin'
         };
 
