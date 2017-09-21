@@ -5,8 +5,6 @@ var express = require('express');
 var app = express(); // create our app w/ express
 var morgan = require('morgan'); // log requests to the console (express4)
 var moment = require('moment');
-var HttpBackend = require('http-backend-proxy');
-var proxy = new HttpBackend('Firefox');
 
 // configuration =================
 
