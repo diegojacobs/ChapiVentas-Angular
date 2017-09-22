@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <div class="signup-container">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div class="row">
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i> Registration</h3>
+                <form class="signup" name="vmSignUp.registrationForm" ng-submit="vmSignUp.validateSignUp()">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="First Name" ng-model="vmSingUp.firstName" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last Name" ng-model="vmSingUp.lastName" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" ng-model="vmSingUp.username" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="vmSingUp.password" required>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ng-model="vmSingUp.terms" required> Please accept the terms and conditions to proceed with your request.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-block"  value="Sign UP">
+                  </div>
+                </form>
+              </article>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -3,16 +3,16 @@
 
     angular
         .module('app')
-        .controller('LoginController', loginController);
+        .controller('SignUpController', signUpController);
 
-    loginController.$inject = [
+    signUpController.$inject = [
         '$scope', 
         '$rootScope', 
         '$state',
         '$cookies'
     ];
 
-    function loginController($scope, $rootScope, $state, $cookies) {
+    function signUpController($scope, $rootScope, $state, $cookies) {
         var vm = this;
 
         vm.$onInit = onInit;
@@ -20,16 +20,20 @@
         ////////////////
 
         function onInit() {
+            $rootScope.isLogged = false;
             //Models
+            vm.firstName = undefined;
+            vm.lastName = undefined;
             vm.username = undefined;
             vm.password = undefined;
+            vm.terms = false;
 
             //Functions
-            vm.validateLogin = validateLogin;
+            vm.validateSignUp = validateSignUp;
         }
 
-        function validateLogin(){
-            if(vm.username && vm.password){
+        function validateSignUp(){
+            if(vm.registrationForm.$valid){
                 $cookies.put('ChapiVentas-Login', true);
                 $rootScope.$broadcast('isLogged', { any: true });
                 $state.go('home');

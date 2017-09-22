@@ -18,7 +18,17 @@
             url: '/',
             templateUrl: '/Views/home.html',
             controller: 'HomeController',
-            controllerAs: 'vmHome'
+            controllerAs: 'vmHome',
+            resolve: {
+                isLogged: function($state, $cookies) {
+                    var isLogged = $cookies.get('ChapiVentas-Login');
+                    if(!isLogged){
+                        $state.go('signin');
+                        return false;
+                    }
+                    return true;
+                }
+            }
         };
 
         var report = {
@@ -26,7 +36,17 @@
             url: '/report',
             templateUrl: '/Views/report.html',
             controller: 'ReportsController',
-            controllerAs: 'vmReport'
+            controllerAs: 'vmReport',
+            resolve: {
+                isLogged: function($state, $cookies) {
+                    var isLogged = $cookies.get('ChapiVentas-Login');
+                    if(!isLogged){
+                        $state.go('signin');
+                        return false;
+                    }
+                    return true;
+                }
+            }
         };
 
         var calendar = {
@@ -34,10 +54,30 @@
             url: '/calendar',
             templateUrl: '/Views/calendar.html',
             controller: 'calendarController',
-            controllerAs: 'calendarCtrl'
+            controllerAs: 'calendarCtrl',
+            resolve: {
+                isLogged: function($state, $cookies) {
+                    var isLogged = $cookies.get('ChapiVentas-Login');
+                    if(!isLogged){
+                        $state.go('signin');
+                        return false;
+                    }
+                    return true;
+                }
+            }
         };
 
         $stateProvider.state(calendar);
+
+        var signUp = {
+            name: 'signup',
+            url: '/signup',
+            templateUrl: '/Views/sign-up.html',
+            controller: 'SignUpController',
+            controllerAs: 'vmSignUp'
+        };
+
+        $stateProvider.state(signUp);
 
         var signin = {
             name: 'signin',

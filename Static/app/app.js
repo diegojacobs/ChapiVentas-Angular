@@ -4,6 +4,8 @@
     angular.module("app", [
         'ngTouch',
         'ngSanitize',
+        'ngCookies',
+        'ngAnimate',
 
         //UI Grid
         'ui.grid',
@@ -16,7 +18,6 @@
         'nvd3',
 
         'mwl.calendar',
-        'ngAnimate',
         'colorpicker.module'
     ]);
 
