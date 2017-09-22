@@ -34,7 +34,9 @@ module.exports = function(config) {
       './Static/app/Controllers/homeController.js',
       './Static/Tests/Unit/Controllers/homeController.spec.js',
       './Static/app/Controllers/loginController.js',
-      './Static/Tests/Unit/Controllers/loginController.spec.js'
+      './Static/Tests/Unit/Controllers/loginController.spec.js',
+      './Static/app/Controllers/signUpController.js',
+      './Static/Tests/Unit/Controllers/signupController.spec.js'
     ],
 
 

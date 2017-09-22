@@ -13,7 +13,8 @@ describe('Login Controller', function() {
       LoginController = $controller('LoginController', {
         $scope: scope,
         $rootScope: $rootScope,
-        $state: state
+        $state: state,
+        $cookies: {}
       });
     }));
   

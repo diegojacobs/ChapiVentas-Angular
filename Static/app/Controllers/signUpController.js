@@ -20,7 +20,6 @@
         ////////////////
 
         function onInit() {
-            $rootScope.isLogged = false;
             //Models
             vm.firstName = undefined;
             vm.lastName = undefined;
