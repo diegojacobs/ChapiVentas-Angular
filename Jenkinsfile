@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Install Dependencies') {
       steps {
-        sh 'npm install'
+        sh '''PATH=/sbin:/usr/sbin:/usr/bin:/usr/local/bin
+
+npm install'''
       }
     }
     stage('Run Unit Tests') {
