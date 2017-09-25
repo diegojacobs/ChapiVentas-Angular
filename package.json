@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "npm install && node server.js",
-    "test": "karma start",
+    "test": "karma start --singleRun",
     "update-e2e": "node_modules/protractor/bin/webdriver-manager update",
     "start-e2e": "node_modules/protractor/bin/webdriver-manager start",
     "e2e": "node_modules/protractor/bin/protractor Static/Tests/e2e/conf.js"
@@ -36,9 +36,7 @@
     "express": "^4.15.4",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
-    "morgan": "^1.8.2"
-  },
-  "devDependencies": {
+    "morgan": "^1.8.2",
     "angular-mocks": "^1.6.6",
     "http-backend-proxy": "^1.4.3",
     "jasmine-core": "^2.8.0",
