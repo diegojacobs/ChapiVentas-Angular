@@ -12,5 +12,7 @@ app.use(express.static(__dirname + '/Static')); // set the static files location
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use(morgan('dev')); // log every request to the console
 
+var dev = process.env.PORT || 8000;
+
 // listen (start app with node server.js) ======================================
-app.listen(8000);
+app.listen(dev);
