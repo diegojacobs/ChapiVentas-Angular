@@ -1,7 +1,14 @@
 pipeline {
-  agent any
+  agent { 
+    node { 
+      label 'docker'
+    }
+  }
+  tools {
+    nodejs 'nodejs'
+  }
   stages {
-    stage('Install Dependencies') {
+    stage('Verify Tools') {
       steps {
         sh 'node -v'
         sh 'npm -v'
