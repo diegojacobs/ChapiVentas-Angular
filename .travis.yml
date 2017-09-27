@@ -5,11 +5,16 @@
   "install": [
     "npm install"
   ],
+  "before_scripts":[
+    "export DISPLAY=:99.0",
+    "sh -e /etc/init.d/xvfb start"
+  ]
   "script": [
     "npm test",
     "npm run update-e2e",
-    "npm run start-e2e",
-    "npm run e2e"
+    "node server.js &",
+    "npm run e2e",
+    "killall node"
   ],
   "group": "stable",
   "dist": "trusty",
