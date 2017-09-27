@@ -1,5 +1,12 @@
 pipeline {
-  agent any
+  agent { 
+    node { 
+      label 'docker'
+    }
+  }
+  tools {
+    nodejs 'nodejs'
+  }
   stages {
     stage('Verify Tools') {
       steps {
