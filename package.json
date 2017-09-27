@@ -7,7 +7,7 @@
     "start": "npm install && node server.js",
     "test": "karma start --singleRun",
     "update-e2e": "node_modules/protractor/bin/webdriver-manager update",
-    "start-e2e": "node_modules/protractor/bin/webdriver-manager start",
+    "start-e2e": "node_modules/protractor/bin/webdriver-manager start --detach",
     "e2e": "node_modules/protractor/bin/protractor Static/Tests/e2e/conf.js"
   },
   "repository": {

@@ -1,0 +1,17 @@
+{
+  "language": "node_js",
+  "sudo": "required",
+  "node_js": "6.11.3",
+  "install": [
+    "npm install"
+  ],
+  "script": [
+    "npm test",
+    "npm run update-e2e",
+    "npm run start-e2e",
+    "npm run e2e"
+  ],
+  "group": "stable",
+  "dist": "trusty",
+  "os": "linux"
+}
