@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Verify Tools') {
       steps {
-        sh 'node -v'
-        sh 'npm -v'
+        sh 'sudo su'
       }
     }
   }
