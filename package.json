@@ -4,11 +4,11 @@
   "description": "Microservices Project",
   "main": "server.js",
   "scripts": {
-    "start": "npm install && node server.js",
+    "start": "npm update && node server.js",
     "test": "karma start --singleRun",
     "update-e2e": "node_modules/protractor/bin/webdriver-manager update",
-    "start-e2e": "node_modules/protractor/bin/webdriver-manager start --detach",
-    "e2e": "node_modules/protractor/bin/protractor Static/Tests/e2e/conf.js"
+    "start-e2e": "",
+    "e2e": "bash e2e.sh"
   },
   "repository": {
     "type": "git",
