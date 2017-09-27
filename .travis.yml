@@ -8,7 +8,7 @@
   "script": [
     "npm test",
     "npm run update-e2e",
-    "npm run start-e2e",
+    "node_modules/protractor/bin/webdriver-manager start --detach",
     "npm run e2e"
   ],
   "group": "stable",
