@@ -2,17 +2,23 @@ language": node_js
 sudo": required
 node_js: 6.11.3
 install: npm install
-script: 
-  #Display Firefox
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 jobs:
   include:
     - stage: Unit Tests
-      script: npm test
+      script: 
+        #Display Firefox
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
+
+        #Unit Tests
+        - npm test
 
     - stage: e2e Tests
       script:
+        #Display Firefox
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
+        
         #Update webdriver-manager
         - npm run update-e2e
 
