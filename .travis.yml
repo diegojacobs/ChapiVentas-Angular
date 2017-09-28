@@ -20,7 +20,7 @@ script:
   - npm run e2e
 
   #Kill site
-  killall node
+  - killall node
 
 group: stable
 dist: trusty
