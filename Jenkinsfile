@@ -1,17 +1,10 @@
-pipeline {
-  agent { 
-    node { 
-      label 'docker'
-    }
-  }
-  tools {
-    nodejs 'nodejs'
-  }
+#!/usr/bin/env groovy
+pipeline { 
+  agent any
   stages {
     stage('Verify Tools') {
       steps {
         sh 'node -v'
-        sh 'npm -v'
       }
     }
   }
