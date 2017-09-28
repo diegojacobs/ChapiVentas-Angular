@@ -9,9 +9,15 @@
     
   ],
   "script": [
+    #Display Firefox
     "export DISPLAY=:99.0",
     "sh -e /etc/init.d/xvfb start",
-    "npm test"
+
+    #Run Unit Tests
+    "npm test",
+
+    #Update webdriver-manager
+    "npm run update-e2e"
   ],
   "group": "stable",
   "dist": "trusty",
