@@ -6,10 +6,11 @@
     "npm install"
   ],
   "before_scripts": [
-    "export DISPLAY=:99.0",
-    "sh -e /etc/init.d/xvfb start"
+    
   ],
   "script": [
+    "export DISPLAY=:99.0",
+    "sh -e /etc/init.d/xvfb start",
     "npm test"
   ],
   "group": "stable",
