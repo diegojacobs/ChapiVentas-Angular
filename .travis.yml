@@ -19,8 +19,14 @@
     #Update webdriver-manager
     "npm run update-e2e",
 
+    #Start site
+    "node server.js &",
+
     #Start webdriver-manager & run e2e tests
-    "npm run e2e"
+    "npm run e2e",
+
+    #Kill site
+    "killall node"
   ],
   "group": "stable",
   "dist": "trusty",
