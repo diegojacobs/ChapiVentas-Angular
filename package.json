@@ -7,7 +7,7 @@
     "start": "npm update && node server.js",
     "test": "karma start --browsers Firefox --singleRun",
     "update-e2e": "node_modules/protractor/bin/webdriver-manager update",
-    "e2e": "node_modules/protractor/bin/protractor Static/Tests/e2e/conf.js",
+    "e2e": "bash e2e.sh",
     "shutdown-e2e": "node_modules/protractor/bin/webdriver-manager shutdown"
   },
   "repository": {
