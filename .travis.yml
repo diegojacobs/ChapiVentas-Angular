@@ -33,7 +33,7 @@ jobs:
       script:
       # this install.sh script requires sudo
         - wget -qO- https://toolbelt.heroku.com/install.sh | sh
-        - heroku pipelines:promote -r chapi-ventas-development --to chapi-ventas-qa
+        - heroku pipelines:promote -r chapi-ventas-dev --to chapi-ventas-qa
 group: stable
 dist: trusty
 os: linux
