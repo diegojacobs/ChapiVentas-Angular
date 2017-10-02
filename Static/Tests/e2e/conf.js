@@ -9,6 +9,6 @@ exports.config = {
       'controllers/homeController.spec.js'
     ],
     capabilities: {
-      browserName: 'chrome'
+      browserName: 'firefox'
     }
   }
