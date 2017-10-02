@@ -22,13 +22,16 @@ jobs:
         - node server.js &
 
         #Start webdriver-manager & run e2e tests
-        - npm run e2e
+        #- npm run e2e
 
         #Shutdown webdriver-manager
-        - npm run shutdown-e2e
+        #- npm run shutdown-e2e
         #Kill site
         - killall node
-
+        
+    - stage: Promote heroku app
+      script:
+        - heroku pipelines:promote -r chapi-ventas-development --to chapi-ventas-qa
 group: stable
 dist: trusty
 os: linux
