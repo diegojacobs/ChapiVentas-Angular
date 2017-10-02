@@ -9,6 +9,9 @@ exports.config = {
       'controllers/homeController.spec.js'
     ],
     capabilities: {
-      browserName: 'firefox'
+      browserName: 'firefox',
+      acceptSslCerts: true,
+      shardTestFiles: false,
+      maxInstances: 1
     }
   }
