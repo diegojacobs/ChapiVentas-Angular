@@ -46,6 +46,10 @@
     "moment": "^2.18.1",
     "morgan": "^1.8.2",
     "protractor": "^5.1.2",
-    "selenium-server-standalone-jar": "^3.5.3"
+    "selenium-server-standalone-jar": "^3.5.3",
+    "karma-jasmine": "~1.1.0",
+    "jasmine-core": "~2.8.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma": "~1.7.1"
   }
 }
