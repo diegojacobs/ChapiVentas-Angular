@@ -1,16 +1,16 @@
 describe('Calendar Controller', function() {
     var $controller, CalendarController;
-    var ProductsRepository;
+    var DatesRepository;
     var obtainPromos;
     var obtainImportantDates;
 
     // Load app module
     beforeEach(angular.mock.module('app'));
     
-    beforeEach(inject(function ($q, _ProductsRepository_) { //Mock our factory and spy on methods
+    beforeEach(inject(function ($q, _DatesRepository_) { //Mock our factory and spy on methods
         obtainPromos = $q.defer();
-        ProductsRepository = _ProductsRepository_;
-        spyOn(ProductsRepository, 'obtainPromos').and.returnValue(obtainPromos.promise);
+        DatesRepository = _DatesRepository_;
+        spyOn(DatesRepository, 'obtainPromos').and.returnValue(obtainPromos.promise);
     }));
 
     // Inject the $controller service to create instances of the controller (CalendarController) we want to test
@@ -21,7 +21,7 @@ describe('Calendar Controller', function() {
       CalendarController = $controller('CalendarController', {
         $scope: scope,
         $rootScope: $rootScope,
-        ProductsRepository: ProductsRepository
+        DatesRepository: DatesRepository
       });
     }));
   
@@ -46,6 +46,6 @@ describe('Calendar Controller', function() {
     });
 
     it('call endpoint', function() {
-        expect(ProductsRepository.obtainPromos).toHaveBeenCalled();
+        expect(DatesRepository.obtainPromos).toHaveBeenCalled();
     });
 });
