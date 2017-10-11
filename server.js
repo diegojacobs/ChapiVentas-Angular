@@ -1,5 +1,3 @@
-// server.js
-
 // set up ========================
 var express = require('express');
 var app = express(); // create our app w/ express
