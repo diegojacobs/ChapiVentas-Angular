@@ -27,6 +27,8 @@ module.exports = function(config) {
       //Repositories
       './Static/Tests/Unit/Repositories/reportsRepository.mock.js',
       './Static/Tests/Unit/Repositories/reportsRepository.spec.js',
+      './Static/Tests/Unit/Repositories/datesRepository.mock.js',
+      './Static/Tests/Unit/Repositories/datesRepository.spec.js',
 
       //Controllers
       './Static/app/Controllers/reportController.js',
@@ -36,7 +38,9 @@ module.exports = function(config) {
       './Static/app/Controllers/loginController.js',
       './Static/Tests/Unit/Controllers/loginController.spec.js',
       './Static/app/Controllers/signUpController.js',
-      './Static/Tests/Unit/Controllers/signupController.spec.js'
+      './Static/Tests/Unit/Controllers/signupController.spec.js',
+      './Static/app/Controllers/calendarController.js',
+      './Static/Tests/Unit/Controllers/calendarController.spec.js'
     ],
 
 
